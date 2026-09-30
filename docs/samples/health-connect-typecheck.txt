@@ -1,0 +1,14 @@
+# Health Connect API 실재 확인
+# 2026-09-30 15:29
+
+$ node -p "require('react-native-health-connect/package.json').version"
+4.1.3
+
+# src/health/healthConnect.ts 가 아래 레코드/필드를 실제로 사용한다:
+#   RestingHeartRate.beatsPerMinute
+#   HeartRateVariabilityRmssd.heartRateVariabilityMillis
+#   SleepSession.startTime / endTime
+#   Weight.weight.inKilograms
+
+$ npx tsc --noEmit
+(오류 없음 — 위 이름들이 패키지 타입 정의와 일치)
