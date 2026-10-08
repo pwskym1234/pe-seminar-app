@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "몸 변화 기록",
+    "slug": "glp1-body-log",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "glp1bodylog",
+    "userInterfaceStyle": "automatic",
+    "platforms": ["android"],
+    "android": {
+      "package": "com.pwskym1234.glp1bodylog",
+      "minSdkVersion": 26,
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-dev-client",
+      [
+        "react-native-health-connect",
+        {
+          "healthConnectPermissions": [
+            "android.permission.health.READ_RESTING_HEART_RATE",
+            "android.permission.health.READ_HEART_RATE_VARIABILITY",
+            "android.permission.health.READ_SLEEP",
+            "android.permission.health.READ_WEIGHT",
+            "android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND",
+            "android.permission.health.READ_HEALTH_DATA_HISTORY"
+          ]
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#208AEF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 76
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
